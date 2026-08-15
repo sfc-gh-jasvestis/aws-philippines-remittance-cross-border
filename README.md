@@ -9,7 +9,6 @@ The Philippines receives $36 billion in remittances annually from 10 million OFW
 ```mermaid
 flowchart LR
     KIN[Kinesis] --> SPS[Snowpipe Streaming]
-    SP --> RAW[RAW Tables]
     SPS --> RAW
     RAW --> DT[Dynamic Tables]
     DT --> ML[ML Functions]
