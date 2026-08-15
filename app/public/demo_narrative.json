@@ -1,0 +1,122 @@
+{
+  "title": "Cross-Border Remittance Analytics & Corridor Intelligence",
+  "duration": "4 minutes",
+  "thesis": "Snowflake ingests remittance transactions via Kinesis in real-time, builds corridor analytics with Dynamic Tables, monitors flow anomalies, and provides natural language intelligence for remittance operations \u2014 replacing fragmented legacy systems",
+  "tabs": [
+    {
+      "id": "executive-cockpit",
+      "persona": {
+        "name": "Carmen Luisa Uy-Tiongco",
+        "role": "Chief Operations Officer",
+        "avatar": "\ud83d\udc69\u200d\ud83d\udcbc"
+      },
+      "talking_points": [
+        "\u20b11.8 trillion processed in 90 days across 210 corridors serving 10M+ OFW families.",
+        "Saudi Arabia corridor up 14% \u2014 Eid al-Fitr seasonal spike.",
+        "Three corridors flagged anomalous: UAE, Hong Kong, Japan \u2014 volume 3x above rolling average."
+      ],
+      "show": [
+        "Point at \u20b11.8T volume KPI",
+        "Highlight top 5 corridors by volume",
+        "Note 3 anomalous corridors in amber"
+      ],
+      "call_out": "\u20b11.8T in 90 days \u2014 3 corridors flagged for unusual activity",
+      "transition": {
+        "next_tab": "corridor-analytics",
+        "line": "Let's drill into corridor performance and what's driving the anomalies."
+      }
+    },
+    {
+      "id": "corridor-analytics",
+      "persona": {
+        "name": "Kenneth Aldrin Reyes",
+        "role": "Corridor Analytics Manager",
+        "avatar": "\ud83d\udc68\u200d\ud83d\udcbb"
+      },
+      "talking_points": [
+        "Saudi Arabia is largest corridor at \u20b1320B \u2014 14% QoQ growth driven by Ramadan/Eid.",
+        "ML.FORECAST predicts US corridor will peak Dec 15-25 \u2014 Christmas remittance surge.",
+        "FX margin compression in UAE corridor: competitors offering 0.2% better rates."
+      ],
+      "show": [
+        "Show corridor waterfall by volume",
+        "Display forecast for US corridor with Christmas peak",
+        "Show FX margin comparison"
+      ],
+      "call_out": "Christmas surge predicted Dec 15-25 \u2014 prepare liquidity now",
+      "transition": {
+        "next_tab": "payout-network",
+        "line": "Forecasting seasonal patterns is critical. Let's look at the payout network."
+      }
+    },
+    {
+      "id": "payout-network",
+      "persona": {
+        "name": "Kenneth Aldrin Reyes",
+        "role": "Corridor Analytics Manager",
+        "avatar": "\ud83d\udc68\u200d\ud83d\udcbb"
+      },
+      "talking_points": [
+        "14,500 payout points \u2014 banks, pawnshops (Cebuana, Palawan Express), e-wallets (GCash, Maya).",
+        "E-wallet payouts now 42% of volume \u2014 up from 28% last year.",
+        "Door-to-door settlement averaging 18 hours \u2014 above 12-hour target in Mindanao."
+      ],
+      "show": [
+        "Show payout channel mix pie chart",
+        "Display settlement speed by channel",
+        "Highlight Mindanao delays on map"
+      ],
+      "call_out": "E-wallets at 42% \u2014 digital transformation in action",
+      "transition": {
+        "next_tab": "ask-ai",
+        "line": "Let the COO ask the system directly."
+      }
+    },
+    {
+      "id": "ask-ai",
+      "persona": {
+        "name": "Carmen Luisa Uy-Tiongco",
+        "role": "Chief Operations Officer",
+        "avatar": "\ud83d\udc69\u200d\ud83d\udcbc"
+      },
+      "talking_points": [
+        "Carmen asks: 'What's our market share in the Saudi corridor?'",
+        "Cortex Analyst queries BSP data: 18.3% market share, #2 behind Western Union.",
+        "Follow-up: 'What does BSP say about new digital remittance regulations?' \u2014 searches regulatory docs."
+      ],
+      "show": [
+        "Type: 'Market share in Saudi corridor?'",
+        "Show SQL + answer",
+        "Search BSP regulatory docs"
+      ],
+      "call_out": "Two AI modes: SQL analytics + regulatory search",
+      "transition": {
+        "next_tab": "architecture",
+        "line": "Every capability \u2014 native Snowflake SQL."
+      }
+    },
+    {
+      "id": "architecture",
+      "persona": {
+        "name": "Carmen Luisa Uy-Tiongco",
+        "role": "Chief Operations Officer",
+        "avatar": "\ud83d\udc69\u200d\ud83d\udcbc"
+      },
+      "talking_points": [
+        "Kinesis \u2192 Snowpipe Streaming \u2192 Dynamic Tables \u2192 ML \u2192 Cortex Agent \u2014 end-to-end.",
+        "2.4M transactions processed with sub-5-minute latency from source to dashboard.",
+        "OFW remittances: $36B annually. This platform processes \u20b11.8T quarterly."
+      ],
+      "show": [
+        "Walk through architecture diagram",
+        "Show streaming latency metrics",
+        "Toggle dual-build mode"
+      ],
+      "call_out": "Real-time remittance intelligence \u2014 5 minutes from transaction to insight",
+      "transition": {
+        "next_tab": "",
+        "line": "That's Snowflake and AWS \u2014 better together for Philippine remittance operations."
+      }
+    }
+  ]
+}
