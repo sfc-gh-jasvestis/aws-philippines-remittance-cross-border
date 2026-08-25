@@ -122,7 +122,7 @@ Industry research and Snowflake customer outcomes:
 - **10 million OFWs support 40% of Philippine households via remittances** — [PSA Philippines](https://psa.gov.ph/statistics/survey/labor-and-employment)
 - **Digital remittance channels grew 35% in Philippines during 2023** — [World Bank](https://remittanceprices.worldbank.org/en/countrycorridor/Philippines)
 - **Real-time transaction monitoring reduces fraud losses 45% in payments** — [McKinsey Payments](https://www.mckinsey.com/industries/financial-services/our-insights/global-payments)
-
+- **Western Union** (Snowflake customer): processes 1B+ cross-border transactions on Snowflake with real-time compliance and fraud detection across 200+ countries -- [snowflake.com/customers/western-union](https://www.snowflake.com/en/customers/all-customers/case-study/western-union/)
 
 ## Key Demo Numbers
 
