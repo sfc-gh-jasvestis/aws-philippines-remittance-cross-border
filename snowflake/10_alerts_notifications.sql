@@ -8,7 +8,7 @@ USE SCHEMA APP;
 CREATE OR REPLACE NOTIFICATION INTEGRATION aws_philippines_remittance_cross_border_EMAIL_INT
   TYPE = EMAIL
   ENABLED = TRUE
-  ALLOWED_RECIPIENTS = ('jonathan.asvestis@snowflake.com');
+  ALLOWED_RECIPIENTS = ('<YOUR_EMAIL>');
 
 -- Alert: CORRIDOR_VOLUME_SPIKE
 CREATE OR REPLACE ALERT APP.CORRIDOR_VOLUME_SPIKE
@@ -22,7 +22,7 @@ IF (EXISTS (
 THEN
   CALL SYSTEM$SEND_EMAIL(
     'aws_philippines_remittance_cross_border_EMAIL_INT',
-    'jonathan.asvestis@snowflake.com',
+    '<YOUR_EMAIL>',
     '[ALERT] Cross-Border Remittance Analytics & Corridor Intelligence: Unusual volume spike in corridor',
     'Unusual volume spike in corridor'
   );
@@ -41,7 +41,7 @@ IF (EXISTS (
 THEN
   CALL SYSTEM$SEND_EMAIL(
     'aws_philippines_remittance_cross_border_EMAIL_INT',
-    'jonathan.asvestis@snowflake.com',
+    '<YOUR_EMAIL>',
     '[ALERT] Cross-Border Remittance Analytics & Corridor Intelligence: Payout settlement exceeding 24-hour threshold',
     'Payout settlement exceeding 24-hour threshold'
   );
