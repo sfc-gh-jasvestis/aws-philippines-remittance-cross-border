@@ -7,6 +7,7 @@ import { Chart } from '@/components/Chart';
 import { DataTable } from '@/components/DataTable';
 import { AskAI } from '@/components/AskAI';
 import { ActionMemo } from '@/components/ActionMemo';
+import { GeoMap } from '@/components/GeoMap';
 
 interface DemoNarrative {
   title: string;
@@ -40,7 +41,18 @@ export default function HomePage() {
         <KPICard title="Avg Transfer Time" value="4.2 hrs" status="neutral" />
         <KPICard title="Transactions (MTD)" value="8.4M" status="neutral" />
       </div>
-      <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
+      <div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
+        <div className="lg:col-span-1">
+          <GeoMap
+            country="philippines"
+            markers={[{"label": "Manila", "value": "Processing center", "color": "blue", "size": "lg"}, {"label": "Cebu", "value": "Distribution hub", "color": "green", "size": "md"}, {"label": "Davao", "value": "Mindanao payout", "color": "green", "size": "md"}, {"label": "Iloilo", "value": "Visayas payout", "color": "green", "size": "sm"}]}
+            routes={[]}
+            title="Geographic Overview"
+            height={280}
+          />
+        </div>
+        <div className="lg:col-span-2 grid grid-cols-1 gap-4">
+      <div className="grid grid-cols-1 gap-4 grid-cols-1">
         <Chart
           data={data?.timeseries || [{ period: 'Loading', value: 0 }]}
           type="line"
@@ -55,6 +67,8 @@ export default function HomePage() {
           yKeys={[{ key: 'count', name: 'Transactions (K)' }]}
           title="Transaction Count by Source Country"
         />
+      </div>
+        </div>
       </div>
       <DataTable
         columns={[
