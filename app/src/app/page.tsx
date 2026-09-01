@@ -32,15 +32,23 @@ export default function HomePage() {
       .catch(() => {});
   }, []);
 
+
+  // Look up a KPI value returned by /api/data (sourced from CURATED.KPI_SUMMARY).
+  // Falls back to the original literal so the card still renders if the API,
+  // or KPI_SUMMARY, is unavailable.
+  const kpiVal = (title: string, fallback: string): string =>
+    (data?.kpiCards as { title: string; value: string }[] | undefined)
+      ?.find((k) => k.title === title)?.value ?? fallback;
+
   const title = narrative?.title || 'SEA AWS Demo';
 
   const executiveCockpit = (
     <div className="space-y-6">
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        <KPICard title="Remittance Volume" value="₱142B" status="neutral" />
-        <KPICard title="Active Corridors" value="42" status="neutral" />
-        <KPICard title="Avg Transfer Time" value="4.2 hrs" status="neutral" />
-        <KPICard title="Transactions (MTD)" value="8.4M" status="neutral" />
+        <KPICard title="Remittance Volume" value={kpiVal('Remittance Volume', '₱142B')} status="neutral" />
+        <KPICard title="Active Corridors" value={kpiVal('Active Corridors', '42')} status="neutral" />
+        <KPICard title="Avg Transfer Time" value={kpiVal('Avg Transfer Time', '4.2 hrs')} status="neutral" />
+        <KPICard title="Transactions (MTD)" value={kpiVal('Transactions (MTD)', '8.4M')} status="neutral" />
       </div>
       <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
         <div className="lg:col-span-1">
@@ -87,9 +95,9 @@ export default function HomePage() {
   const domainTab1 = (
     <div className="space-y-6">
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
-        <KPICard title="US→PH Share" value="38%" />
-        <KPICard title="Middle East Share" value="24%" />
-        <KPICard title="Avg Fee Rate" value="2.1%" />
+        <KPICard title="US→PH Share" value={kpiVal('US→PH Share', '38%')} />
+        <KPICard title="Middle East Share" value={kpiVal('Middle East Share', '24%')} />
+        <KPICard title="Avg Fee Rate" value={kpiVal('Avg Fee Rate', '2.1%')} />
       </div>
       <Chart
         data={data?.detail || [{ x: 'Mon', y: 24 }, { x: 'Tue', y: 28 }, { x: 'Wed', y: 22 }, { x: 'Thu', y: 31 }, { x: 'Fri', y: 26 }, { x: 'Sat', y: 19 }, { x: 'Sun', y: 23 }]}
