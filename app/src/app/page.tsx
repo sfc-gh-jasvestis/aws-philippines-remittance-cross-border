@@ -54,6 +54,7 @@ export default function HomePage() {
         <div className="lg:col-span-1">
           <GeoMap
             country="philippines"
+            regions={data?.regions}
             markers={[{"label": "Manila", "value": "Processing center", "color": "blue", "size": "lg"}, {"label": "Cebu", "value": "Distribution hub", "color": "green", "size": "md"}, {"label": "Davao", "value": "Mindanao payout", "color": "green", "size": "md"}, {"label": "Iloilo", "value": "Visayas payout", "color": "green", "size": "sm"}]}
             routes={[]}
             title="Geographic Overview"
@@ -70,7 +71,7 @@ export default function HomePage() {
           title="Remittance Volume by Corridor (Monthly)"
         />
         <Chart
-          data={data?.categories || [{ category: 'North', count: 82 }, { category: 'Central', count: 74 }, { category: 'South', count: 91 }, { category: 'Highland', count: 68 }, { category: 'Coastal', count: 77 }]}
+          data={data?.categoryMetric || [{ category: 'North', count: 82 }, { category: 'Central', count: 74 }, { category: 'South', count: 91 }, { category: 'Highland', count: 68 }, { category: 'Coastal', count: 77 }]}
           type="bar"
           xKey="category"
           yKeys={[{ key: 'count', name: 'Transactions (K)' }]}
