@@ -54,6 +54,7 @@ export default function HomePage() {
         <div className="lg:col-span-1">
           <GeoMap
             country="philippines"
+            labels={{ entity: 'Corridors', event: 'Transactions', alert: 'Failed Transfers' }}
             regions={data?.regions}
             markers={[{"label": "Manila", "value": "Processing center", "color": "blue", "size": "lg"}, {"label": "Cebu", "value": "Distribution hub", "color": "green", "size": "md"}, {"label": "Davao", "value": "Mindanao payout", "color": "green", "size": "md"}, {"label": "Iloilo", "value": "Visayas payout", "color": "green", "size": "sm"}]}
             routes={[]}
@@ -84,8 +85,13 @@ export default function HomePage() {
         columns={[
           { key: 'id', header: '#' },
           { key: 'name', header: 'Corridor' },
+          { key: 'region', header: 'Region' },
           { key: 'status', header: 'Speed' },
-          { key: 'value', header: 'Volume (₱B)' },
+          { key: 'm1', header: 'Volume (₱B)' },
+          { key: 'm2', header: 'Us Ph Share' },
+          { key: 'm3', header: 'Middle East Share' },
+          { key: 'events', header: 'Transactions' },
+          { key: 'alerts', header: 'Failed Transfers' },
         ]}
         data={data?.entities || []}
         title="Corridor Performance"
